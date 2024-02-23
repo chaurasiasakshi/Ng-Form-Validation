@@ -1,0 +1,66 @@
+<div class="container mt-5 ">
+  <h1 class="text-left">Sign Up</h1>
+  <h4 class="text-left">let's create your account</h4>
+
+  <h5>Enter Your Details Below :</h5>
+
+  <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col  mb-3">
+      <input type="text" formControlName="Name" placeholder="Enter Your Name" class="form-control border-top-0 border-right-0 border-left-0">
+    </div><br>
+    @if(Name?.invalid && (Name?.dirty || Name?.touched)){
+      @if(Name?.errors?.['required']){
+        <span class="text-danger ">Name is required</span>
+      }
+        }
+  </div>
+
+  <div class="row">
+    <div class="col  mb-3">
+      <input type="text"  formControlName="Email" placeholder="Enter Your Email" class="form-control  border-top-0 border-right-0 border-left-0">
+    </div>
+    @if(Email?.invalid && (Email?.dirty || Email?.touched)){
+      @if(Email?.errors?.['required']){
+        <span class="text-danger">Email is required</span>
+      }
+        }
+  </div>
+
+  <div class="row">
+    <div class="col mb-3">
+      <input type="text"  formControlName="Password" placeholder="Enter Your Password" class="form-control  border-top-0 border-right-0 border-left-0">
+    </div>
+    @if(Password?.invalid && (Password?.dirty || Password?.touched)){
+      @if(Password?.errors?.['required']){
+        <span class="text-danger">Password is required</span>
+      }
+        }
+    <div class="col">
+      <input type="text"  formControlName="Cpassword" placeholder="Enter Your Confirm Password" class="form-control  border-top-0 border-right-0 border-left-0">
+    </div>
+    @if(Cpassword?.invalid && (Cpassword?.dirty || Email?.touched)){
+      @if(Cpassword?.errors?.['required']){
+        <span class="text-danger">Cpassword is required</span>
+      }
+        }
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" 
+      formControlName="Phone" placeholder="Enter Your Phone Number" class="form-control border-top-0 border-right-0 border-left-0">
+    </div>
+    @if(Phone?.invalid && (Phone?.dirty || Phone?.touched)){
+      @if(Phone?.errors?.['required']){
+        <span class="text-danger">Phone is required</span>
+      }
+        }
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button type="submit" [disabled]="!loginform.valid" class="btn-lg btn-warning rounded-circle offset-6  mt-5 mb-5" >Next</button>
+    </div>
+  </div>
+</form>
+</div>
