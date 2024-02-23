@@ -17,6 +17,11 @@ h5{
     font-weight:300;
 }
 
-/* .container{
+.container{
     background-color: beige;
-} */
+    width: 52em;
+    
+    padding-inline: 30px;
+    box-shadow: 2px 8px 12px grey;
+    border-radius: 12px;
+}
